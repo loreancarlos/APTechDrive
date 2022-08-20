@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.header`
    display: flex;
@@ -14,7 +15,7 @@ export const Container = styled.header`
    border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 `;
 
-export const Profile = styled.div`
+export const Profile = styled(Link)`
    display: flex;
    align-items: center;
    gap: 1.6rem;
@@ -47,12 +48,14 @@ export const Logout = styled.button`
    border: none;
    height: 3.6rem;
    
+   &:hover{
+      >svg{
+        color: ${({ theme }) => theme.COLORS.ORANGE};
+      }
+   }
+
    > svg{
       color: ${({ theme }) => theme.COLORS.GRAY_100};
       font-size: 3.6rem;
-
-      &:hover{
-         color: ${({ theme }) => theme.COLORS.ORANGE};
-      }
    }
-`;
+      `;
